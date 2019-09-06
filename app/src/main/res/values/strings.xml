@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">CatConcentrate</string>
+    <string name="app_name">Cat Concentrate</string>
+    <string name="repeatingBackgroundContentDescription">Repeating Background</string>
+    <string name="itemBackgroundContentDescription">Main Background</string>
 </resources>
