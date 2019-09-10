@@ -2,4 +2,6 @@
     <string name="app_name">Cat Concentrate</string>
     <string name="repeatingBackgroundContentDescription">Repeating Background</string>
     <string name="itemBackgroundContentDescription">Main Background</string>
+    <string name="menuButtonContentDescription">Menu</string>
+    <string name="giftButtonContentDescription">Gifts</string>
 </resources>
