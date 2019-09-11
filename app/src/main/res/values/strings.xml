@@ -4,4 +4,8 @@
     <string name="itemBackgroundContentDescription">Main Background</string>
     <string name="menuButtonContentDescription">Menu</string>
     <string name="giftButtonContentDescription">Gifts</string>
+    <string name="cat1ContentDescription">Cat 1</string>
+    <string name="cat2ContentDescription">Cat 2</string>
+    <string name="cat3ContentDescription">Cat 3</string>
+    <string name="cat4ContentDescription">Cat 4</string>
 </resources>
