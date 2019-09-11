@@ -1,21 +1,25 @@
 package com.matthewfan.catconcentrate;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+
 public class MainActivity extends AppCompatActivity {
-    Handler timerHandler = new Handler();
-    Runnable timerRunnable = new Runnable() {
+    private Handler m_timerHandler = new Handler();
+    private Runnable m_timerRunnable = new Runnable() {
         @Override
         public void run() {
             m_tick();
-            timerHandler.postDelayed(this , 1000);
+            m_timerHandler.postDelayed(this , 1000);
         }
     };
 
@@ -24,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private double[] m_catSpawnProbabilities = {.2 , .5 , .7 , 1};
     private long[] m_catTargetGiftsTime = {50 , 50 , 50 , 50};
     private ImageView[] m_catBackgrounds;
+
+    private boolean m_isTicking = false;
 
 
     @Override
@@ -54,8 +60,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        // Start ticks
-        timerHandler.post(timerRunnable);
+        if(!m_isTicking) {
+            // Start ticks
+            m_timerHandler.post(m_timerRunnable);
+            m_isTicking = true;
+        }
 
         Log.d("Timer", "resume");
     }
@@ -64,14 +73,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        timerHandler.removeCallbacks(timerRunnable);
 
-        // Despawn cats
-        for(Cat cat : m_cats) {
-            cat.despawn();
+        PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+
+        if(powerManager.isInteractive()) {
+            m_timerHandler.removeCallbacks(m_timerRunnable);
+            m_isTicking = false;
+
+            // Despawn cats
+            for(Cat cat : m_cats) {
+                cat.despawn();
+            }
+
+            Log.d("Timer", "pause");
         }
-
-        Log.d("Timer", "pause");
     }
 
 
