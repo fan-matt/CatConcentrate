@@ -6,52 +6,40 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <ImageView
-        android:id="@+id/repeatingBackgroundImageView"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:id="@+id/giftsImageButton"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/repeatingBackgroundContentDescription"
-        android:scaleType="centerCrop"
+        android:contentDescription="@string/giftButtonContentDescription"
+        android:padding="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/repeating_background" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageView
-        android:id="@+id/itemBackgroundImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/itemBackgroundContentDescription"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/items_background" />
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/itemBackgroundContentDescription"
+            android:scaleType="fitStart"
+            app:srcCompat="@drawable/background" />
+    </HorizontalScrollView>
 
     <ImageButton
-        android:id="@+id/menuButton"
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:contentDescription="@string/menuButtonContentDescription"
-        android:padding="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/giftButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hamburger_menu" />
-
-    <ImageButton
-        android:id="@+id/giftButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:contentDescription="@string/giftButtonContentDescription"
         android:onClick="openGiftsActivity"
         android:padding="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gift" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
