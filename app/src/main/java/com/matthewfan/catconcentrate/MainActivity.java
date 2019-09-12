@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Cat[] m_cats = new Cat[4];
-    private double[] m_catSpawnProbabilities = {.2 , .5 , .7 , 1};
+    private double[] m_catSpawnProbabilities = {1 , 1 , 1 , 1};
     private long[] m_catTargetGiftsTime = {50 , 50 , 50 , 50};
     private ImageView[] m_catBackgrounds;
 
@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 cat.despawn();
             }
 
+
             Log.d("Timer", "pause");
         }
     }
@@ -97,10 +98,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private boolean firstFrame = true;
+
+
     private void m_tick() {
         Log.d("Timer", "tick");
         for(Cat cat : m_cats) {
             cat.tick();
         }
+
+        ImageView view2 = findViewById(R.id.cat2ImageView);
+
+
+        // Testing
+        if(firstFrame) {
+            view2.setImageResource(R.drawable.cat2_scroll2);
+        }
+        else {
+            view2.setImageResource(R.drawable.cat2_scroll);
+        }
+        firstFrame = !firstFrame;
     }
 }
