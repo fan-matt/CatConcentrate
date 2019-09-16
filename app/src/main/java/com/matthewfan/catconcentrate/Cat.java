@@ -1,6 +1,7 @@
 package com.matthewfan.catconcentrate;
 
 
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,14 +13,17 @@ public class Cat {
     private long m_currentGiftsTime;
     private boolean m_spawned = false;
     private ImageView m_image;
+    private Drawable[] m_animationFrames;
+    private int m_currentAnimationFrameIndex = 0;
 
 
     public Cat(final int ID , final double SPAWN_PROBABILITY , final long CURRENT_GIFTS_TIME ,
-               final ImageView IMAGE) {
+               final ImageView IMAGE , final Drawable[] ANIMATION_FRAMES) {
         m_id = ID;
         m_spawnProbability = SPAWN_PROBABILITY;
         m_targetGiftsTime = CURRENT_GIFTS_TIME;
         m_image = IMAGE;
+        m_animationFrames = ANIMATION_FRAMES;
     }
 
 
@@ -30,9 +34,14 @@ public class Cat {
             }
         }
 
-        // Flip flop images
+        // Animate the cat
+        m_currentAnimationFrameIndex ++;
 
-        Log.d("Cat " + String.valueOf(m_id), "I'm alive!");
+        if(m_currentAnimationFrameIndex == m_animationFrames.length) {
+            m_currentAnimationFrameIndex = 0;
+        }
+
+        m_image.setImageDrawable(m_animationFrames[m_currentAnimationFrameIndex]);
     }
 
 
