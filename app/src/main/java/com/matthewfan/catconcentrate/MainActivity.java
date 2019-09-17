@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         m_catBackgrounds = new ImageView[] {
             findViewById(R.id.cat1ImageView) ,
             findViewById(R.id.cat2ImageView) ,
-            findViewById(R.id.cat3ImageView) ,
-            findViewById(R.id.cat4ImageView) ,
         };
 
         for(ImageView imageView : m_catBackgrounds) {
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 {getDrawable(R.drawable.cat1_frame1) , getDrawable(R.drawable.cat1_frame2)};
 
         Drawable[] cat2AnimationFrames =
-                {getDrawable(R.drawable.cat2_frame1) , getDrawable(R.drawable.cat2_scroll2)};
+                {getDrawable(R.drawable.cat2_frame1) , getDrawable(R.drawable.cat2_frame2)};
 
         m_animationFrames[0] = cat1AnimationFrames;
         m_animationFrames[1] = cat2AnimationFrames;
