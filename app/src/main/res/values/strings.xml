@@ -8,4 +8,7 @@
     <string name="cat2ContentDescription">Cat 2</string>
     <string name="cat3ContentDescription">Cat 3</string>
     <string name="cat4ContentDescription">Cat 4</string>
+    <string name="catthewPictureContentDescription">Catthew Picture</string>
+    <string name="catthewName">Catthew</string>
+    <string name="catthewDescription">Washed up pianist</string>
 </resources>
