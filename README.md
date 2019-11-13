@@ -4,7 +4,7 @@
 <strong> Cat Concentrate </strong> is a home-grown, organic project of mine that involves cats that give you gifts so that you don't waste your time! If only something like this existed for my laptop...
 
 ## Concept
-Catthew and Katsi need to get things done- Catthew has a recital that he didn't start practicing for until the day before (!!!) and Katsi is starting her work on her doctoral thesis 3 day before (!!!!). They need some motivation to keep going. That's where you come in! If they know you're also working hard, then that'll inspire them to do the same.
+Catthew and Katsi need to get things done- Catthew has a recital that he didn't start practicing for until the day before (!!!) and Katsi is starting her work on her doctoral thesis 3 days before (!!!!). They need some motivation to keep going. That's where you come in! If they know you're also working hard, then that'll inspire them to do the same.
 
 Catthew and Katsi will only appear after leaving your phone on Cat Concentrate for some amount of time. Be careful though! If you leave the app, they will stop working and go get a coffee or something. After Catthew and Katsi have been working for a set amount of time, they will give you gifts as a token of appreciation for your efforts.
 
